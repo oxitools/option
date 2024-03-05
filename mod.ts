@@ -473,4 +473,5 @@ export class Option<T> {
 
 Object.freeze(Option.None);
 
-export const { Some, None } = Option;
+export const Some = Option.Some;
+export const None = Option.None;
