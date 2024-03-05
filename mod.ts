@@ -473,5 +473,28 @@ export class Option<T> {
 
 Object.freeze(Option.None);
 
-export const Some = Option.Some;
-export const None = Option.None;
+/**
+ * A convenience reference to the `Option.Some` method, allowing for the creation of `Some` instances to represent the presence of a value.
+ * This function is used to encapsulate a value that is present, making the code more expressive and idiomatic when dealing with optional values.
+ * @type {typeof Option.Some}
+ * @example
+ * ```ts
+ * const maybeValue = Some(42);
+ * console.log(maybeValue.toString()); // "Some(42)"
+ * // Use `maybeValue` in contexts where the value may or may not be present, providing a safer alternative to null or undefined.
+ * ```
+ */
+export const Some: typeof Option.Some = Option.Some;
+
+/**
+ * A convenience reference to the `Option.None` property, representing the absence of a value.
+ * `None` is used to signify that an expected value is not present, offering a more descriptive and safer alternative to `null` or `undefined`.
+ * @type {typeof Option.None}
+ * @example
+ * ```ts
+ * const noValue = None;
+ * console.log(noValue.toString()); // "None"
+ * // Use `noValue` in contexts where there is explicitly no value, avoiding the pitfalls of `null` and `undefined`.
+ * ```
+ */
+export const None: typeof Option.None = Option.None;
