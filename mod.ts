@@ -98,7 +98,7 @@ export class Option<T> {
    * const noValue = Option.None;
    * ```
    */
-  static None = new Option<never>();
+  static None: Option<never> = new Option();
 
   /**
    * Creates an `Option` from a value that may be `null` or `undefined`.
