@@ -24,6 +24,14 @@ function assertNone<T>(option: Option<T>): asserts option is Option<T> {
 const some = (value = 10): Option<number> => Option.Some(value);
 const none = (): Option<number> => Option.None;
 
+Deno.test('Option#isOption', () => {
+  assert(Option.isOption(some()));
+  assert(Option.isOption(none()));
+  assertFalse(Option.isOption(10));
+  assertFalse(Option.isOption(undefined));
+  assertFalse(Option.isOption(null));
+})
+
 Deno.test("Option#Some", () => {
   const option = some();
   assertSome(option, 10);

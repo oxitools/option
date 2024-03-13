@@ -75,6 +75,20 @@ export class Option<T> {
   }
 
   /**
+   * Checks if a value is an `Option`. 
+   * @param value - The value to check. 
+   * @returns `true` if the value is an `Option`, otherwise `false`. 
+   * ```ts
+   * const isOption = Option.isOption(Option.Some(42)); // true
+   * const isNotOption = Option.isOption(42); // false
+   * ```
+   * @since 0.2.0
+   */
+  static isOption(value: unknown): value is Option<unknown> {
+    return value instanceof Option;
+  }
+
+  /**
    * Creates an `Option` with a value (equivalent to Rust's `Some`).
    *
    * @template T
